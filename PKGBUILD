@@ -306,12 +306,6 @@ ObjectPath=/org/mozilla/${_pkgname//-/}/SearchProvider
 Version=2
 END
 
-  export SOCORRO_SYMBOL_UPLOAD_TOKEN_FILE="$startdir/.crash-stats-api.token"
-  if [[ -f $SOCORRO_SYMBOL_UPLOAD_TOKEN_FILE ]]; then
-    make -C obj uploadsymbols
-  else
-    cp -fvt "$startdir" obj/dist/*crashreporter-symbols-full.tar.zst
-  fi
 }
 
 # vim:set sw=2 sts=-1 et:
